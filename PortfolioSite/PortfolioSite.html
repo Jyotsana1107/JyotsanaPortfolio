@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="portfolio.webp">
+		<title> Portfolio Website </title>
+	</head>
+
+
+	<style>
+		@media(max-width:600px){
+			nav {
+
+				flex-wrap: wrap;
+				justify-content: center;
+				padding: 10px 20px;
+			}
+			.logo {
+				flex: 1 100%;
+				text-align: center;
+				margin-bottom: 10px;
+				font-size: 24px;
+			}
+			nav a {
+				margin: 5px 5px 0 0;
+				font-size: 18px;
+			}
+			#hero{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: calc(100% - 40px);
+				max-width: 600px;
+				text-align: center;
+				padding: 0 20px;
+			}
+			#hero h1{
+				font-size: 28px;
+				line-height: 1.2;
+			}
+			#hero h4{
+				font-size: 20px;
+				margin: 8px 0;
+			}
+			#skills #skillBox{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 10px;
+				padding: 0 10px;
+			}
+			#skillBox span{
+				display: block;
+				padding: 5px;
+				width: calc(100% - 20px);
+				max-width: 500px;
+				margin: 10px auto;
+			}
+			.about-content{
+				flex-direction: column;
+				gap: 20px;
+				padding: 10px 20px;
+				text-align: left;
+			}
+			.about-content .partition{
+				width: 100%;
+				justify-content: center;
+			}
+			#aboutImg{
+				width: 100%;
+				max-width: 250px;
+				height: auto;
+			}
+			.card{
+				flex-wrap: wrap;
+				gap: 20px;
+				padding: 0 10px;
+				justify-content: center;
+				text-align: justify;
+			}
+			.phead{
+				min-height: auto;
+				width: 100%;
+				max-width: 500px;
+				padding: 20px;
+			}
+			#contactBox{
+				flex-direction: column;
+				padding: 5px 10px 5px 10px;
+				gap: 5px;
+			}
+			#contactBox iframe{
+				width: 100%;
+				max-width: 500px;
+				height: auto;
+			}
+			html { scroll-padding-top: 260px; }
+		}
+	body{
+		margin: 0;
+		font-family: Arial, sans-serif;
+		background:#2426af;
+	}
+	header{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+	}
+	main{
+		padding: 30px; 
+		background:#2426af;
+	}
+	footer{
+		text-align: center;
+		padding: 0px;
+		background:#2426af;
+	}
+	html{
+		scroll-behavior:smooth;
+		scroll-padding-top: 70px;
+	}
+	.logo{
+		color:white;
+		font-size:28px;
+		font-weight:bold;
+	}
+	nav{
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 50px;
+		align-items:center;
+		background:#161892;
+	}
+	nav a{
+		margin-left: 20px;
+		text-decoration: none;
+		background-size: 90% 1px;
+		border-radius: 25px; 
+		background: #f3f3f3;
+		padding: 5px 10px 5px 10px;
+		font-weight: bold;
+		transition: background-color 0.3s ease;
+	}
+	nav a:hover{
+		background-color: #7497fa;
+		color: #161892;
+	}
+	#home{
+		position: relative;
+		top: 30%
+	}
+	#hero{
+		font-size: 24px;
+		font-weight: bold;
+		color: #fff;
+		position: absolute;
+		top: 40%;
+		left: 10%;
+	}
+	#img1{
+		width: 100%;
+		max-width: 1600px;
+		height: auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	h2{
+		display: inline-block;
+		text-decoration: solid underline;
+		background-size: 90% 1px;
+		border-radius: 25px; 
+		background: #f3f3f3;
+		padding: 5px 10px 5px 10px;
+		margin-bottom: 30px;
+	}
+	section{
+		margin-bottom: 80px;
+	}
+	li{
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.about-content{
+		display: flex;
+		gap: 40px;
+		text-align: justify;
+		justify-content: space-between;
+		padding: 10px 100px 10px 100px;
+	}
+	.about-content .partition{
+		flex: 1;
+		min-width: 150px;
+		max-width: 400px;
+	}
+	.about-content .about-text{
+		display: flex;
+		align-items: center;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 25px;
+		min-height: 200px;
+		border: 3px solid #0389f7;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	}
+	.about-content .about-text p{
+		margin: 0;
+		font-size: 18px;
+		line-height: 1.6;
+		padding: 0 10px;
+	}
+	#aboutImg{
+		width: 100%;
+		max-width: 200px;
+		height: auto;
+		border-radius: 25px;
+		display: block;
+		margin: 0 auto;
+		border: 3px solid #0389f7;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	}
+	#skills #skillBox{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 10px 30px;
+		justify-content: center;
+		gap: 10px;
+	}
+	#skills span{
+		flex: 1;
+		justify-content: space-between;
+		margin: 50px;
+		align-items: center;
+		padding: 5px 10px;
+		background: #f3f3f3;
+		border-radius: 25px; 
+		font-weight: bold;
+		border: 3px solid #0389f7;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	}
+	.card {
+		display: flex;
+		gap: 30px;
+		justify-content: center;
+	}
+	.phead{
+		flex: 1;
+		min-height: 300px;
+		padding: 25px;
+		border: 2px solid #0389f7;
+		border-radius: 25px;
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	}
+	button{
+		background-color: #345bdd;
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 35px;
+		cursor: pointer;
+		text-align: center;
+		box-shadow: 0 4px 8px rgba(48, 65, 161, 0.1);
+		transition: background-color 0.3s ease;
+	}
+	button:hover{
+		background-color: #010b42;
+	}
+	#contactBox{
+		display: flex;
+		flex:1;
+		font-size: 18px;
+		font-weight: bold;
+		align-items: center;
+		gap: 200px;
+		padding: 10px 170px 10px 200px;
+	}
+	#contactBox a{
+		color: #0a0000;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	#contactBox iframe{
+		width: 100%;
+		max-width: 500px;
+		height: auto;
+		border-radius: 20px;
+		border: 5px solid #0389f7;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	}
+	</style>
+
+
+
+<body>
+	<header>
+		<nav>
+			<span class="logo">JYOTSANA</span>
+			<a href = "#about"> About </a> 
+			<a href = "#skills"> Skills </a>
+			<a href = "#projects"> Projects </a>
+			<a href = "#contact"> Contact </a>
+		</nav>
+	</header>
+
+
+	<section id = "home">
+		<img id = "img1" src="heroBg.webp">
+		<div id = "hero">
+			<h1>Jyotsana,  A Data Analyst</h1>
+			<h4>Welcome to my Portfolio Website</h4>
+			<h4><a href = "#about" style = "color: #fff;"> Let's Explore </a></h4>
+		</div>
+	</section>
+
+
+	<main>
+		<section id="about">
+			<h2> About Me </h2>
+			<div class="about-content">
+				<div class="partition">
+					<img id = "aboutImg" src="Profile.jpeg" alt="About Me Image">
+				</div>
+				<div class="partition about-text">
+					<p>Hi, I am Jyotsana. I am a Data Analyst. I love to analyze data and create insights that help businesses make informed decisions. I am passionate about using data to drive business growth and improve operational efficiency. I have a strong foundation in Python, SQL, Excel, and Power BI.</p>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section id = "skills">
+			<h2> My Skills </h2><br>
+				<div id = "skillBox">
+					<div style="margin-bottom: 50px;">
+						<span>Python - Pandas, NumPy, Seaborn, Matplotlib</span>
+						<span>Excel - Pivot Tables, LookUps</span>
+					</div>
+					<div>
+						<span>SQL - MySQL, Joins, Aggregates, Subqueries</span>
+						<span>Power BI - Data Visualization</span>
+					</div>
+				</div>
+		</section>
+
+
+
+	<section id = "projects">
+		<h2> My Projects </h2>
+		<div style="padding: 0 50px;">
+			<p style="font-size:22px; font-weight: bold; text-align: center; margin-bottom: 30px;">Here are some of my projects:</p>
+			<div class="card">
+				<div class="phead">
+					<p style="font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 10px;">
+						Customer Churn Analysis
+					</p>
+					<p style="text-align: justify;">
+						Analyze customer behavior to predict churn and implement retention strategies. Had a 85% accuracy in predicting customer churn. There are several factors that contribute to customer churn, including poor customer service, lack of engagement, and competitive offers.
+					</p>
+					<div style="text-align: center; margin-top: 10px;">
+						<button onclick="window.open('https://github.com/Jyotsana1107', '_blank')">Project Link</button>
+					</div>
+				</div>
+				<div class="phead">
+					<p style="font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 10px;">
+						Gaming Industry Analysis
+					</p>
+					<p style="text-align: justify;">
+						Examine market trends and player engagement in the gaming sector. It was to identify platforms with high user retention and publishers with strong market presence.
+					</p>
+					<div style="text-align: center; margin-top: 10px;">
+						<button onclick="window.open('https://github.com/Jyotsana1107/Gaming-Industry-Analysis', '_blank')">Project Link</button>
+					</div>
+				</div>
+				<div class="phead">
+					<p style="font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 10px;">
+						Retail Sales Performance Analysis
+					</p>
+					<p style="text-align: justify;">
+						Evaluated sales data to identify performance patterns and optimize inventory management. The analysis helped in making data-driven decisions for inventory optimization. It identified top-performing products and seasonal trends, leading to improved sales strategies.
+					</p>
+					<div style="text-align: center; margin-top: 10px;">
+						<button onclick="window.open('https://www.linkedin.com/posts/jyotsanaanand11_i-built-my-first-mock-sales-data-dashboard-activity-7414202241747939328-nK8V?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQReV8BcPatxpiognZiEk0qrynlZNLuoFA', '_blank')">Project Link</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section id = "contact">
+		<h2> Contact Me </h2>
+		<div id = "contactBox">
+			<div>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6887.6689725187!2d76.85536503937412!3d30.327225399129404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fb6709d19c8af%3A0x646d74ee203a3db8!2sPalam%20Vihar%2C%20Nirmal%20Vihar%2C%20Haryana%20133001!5e0!3m2!1sen!2sin!4v1779634692856!5m2!1sen!2sin" width="500" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<div>
+				<div>
+					<p style = "font-size: 18px; font-weight: bold; text-align: justify;">Palam Vihar - D, Behind B.D. Flour Mill, <br> Ambala Cantt, Haryana, India - 133001</p>
+				</div>
+				<h3>Feel free to reach out!</h3>
+				Email: <a href="https://mail.google.com/mail/u/0/#sent?compose=CllgCJZbjcXMztvxzhSFrlTnkzlflJLLSCNRcJwlRhTVwCRVLlnNvpMCQfKgcfzjlnmLdvVqvRg" target="_blank" style="text-decoration: underline;">jyotsanaananad11@gmail.com</a>
+				<br>LinkedIn: <a href="https://www.linkedin.com/in/jyotsanaanand11/" target="_blank" style="text-decoration: underline;">jyotsanaananad11</a>
+				<br>GitHub: <a href="https://github.com/Jyotsana1107" target="_blank" style="text-decoration: underline;">jyotsana1107</a>
+			</div>
+		</div>
+	</section>
+	</main>
+
+
+
+	<footer> <p> &copy; Created by Jyotsana in May 2026 </p></footer>
+</body>
+</html>
